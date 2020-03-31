@@ -4,6 +4,8 @@ import axios from "axios";
 // Import Components
 import Navbar from './components/layout/Navbar';
 import SearchBar from './components/SearchBar';
+import Results from './components/Results';
+
 
 
 
@@ -30,9 +32,9 @@ function App() {
       // Send the request
       axios(apiKey + "&s=" + state.search)
         .then(({data})=>{
-          let results = data;
-          setState({
-            results:results
+          let results = data.Search;
+          setState(prevState=>{
+            return {...prevState, results:results}
           });
           console.log(results);          
         });  
@@ -44,10 +46,9 @@ function App() {
 
     let search = evt.target.value;
     
-    setState({
-      search:search
-    });
-   
+    setState(prevState => {
+      return  {...prevState,search:search}
+    });    
   };
 
   return (
@@ -55,7 +56,8 @@ function App() {
     <div>
       <Navbar />
       <div className="container">        
-        <SearchBar handleInput={handleInput} search={search} />      
+        <SearchBar handleInput={handleInput} search={search} />
+        <Results results={state.results}/>      
       </div>
     </div>
   );
