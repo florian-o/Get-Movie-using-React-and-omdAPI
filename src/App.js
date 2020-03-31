@@ -37,15 +37,15 @@ function App() {
             return {...prevState, results:results}
           });
           console.log(results);          
+        }).catch((err)=>{
+          console.log(err);          
         });  
-    };
-     
+    };     
   };
 
   const handleInput = evt => {
-
-    let search = evt.target.value;
     
+    let search = evt.target.value;    
     setState(prevState => {
       return  {...prevState,search:search}
     });    

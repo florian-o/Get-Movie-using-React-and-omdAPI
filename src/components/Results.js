@@ -1,19 +1,17 @@
 import React from 'react';
-//import Result from './Result';
+import Result from './Result';
 
 
 function Results({results}) {
     return (
-        <>
-        <div>
        
+        <div className="results">
             {results.map(item => {
                 return (
-                    <p>{item.Title}</p> 
+                   <Result key={item.imdbID} item={item} />
             )})}
-            
-        </div>
-        </>
+          </div>  
+        
     )
 }
 
