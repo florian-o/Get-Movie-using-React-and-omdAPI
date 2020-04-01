@@ -45,3 +45,14 @@ code {
  background: #fff;
  color: #4484E4;
 }
+.loading{
+  font-size: 25px;
+  text-align: center;
+  animation: colorloading 3s infinite;
+  
+}
+@keyframes colorloading { 
+  0% { }
+  50% { color:#4484E4 } 
+  }
+ 

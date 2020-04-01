@@ -13,9 +13,6 @@ import Results from './components/Results';
 
 function App() {
 
-
-
-
   const [state, setState] = useState({
     search:"",
     results:[],
@@ -44,7 +41,7 @@ function App() {
   };
 
   const handleInput = evt => {
-    
+
     let search = evt.target.value;    
     setState(prevState => {
       return  {...prevState,search:search}
